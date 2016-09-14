@@ -1,0 +1,49 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.util.Scanner;
+
+/* Corey "Yeroc" Taylor */
+class CollatzConjecture
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner keyboard = new Scanner(System.in);
+		int x, count;
+		System.out.println("Give a value for the Collatz Conjecture");
+		x = keyboard.nextInt();
+		count = 1;
+		//Collatz Conjecture if x = even then divide by 2
+		// if x = odd then 3*x + 1 then continue that pattern
+		while (x != 1)
+		{
+			if (x % 2 == 0) 
+			{
+				System.out.println(x);
+				x = x/2;
+				System.out.println("Your new number is: " + x);
+			}
+			else if (x % 2 == 1) 
+			{
+				System.out.println(x);
+				x = (3 * x) + 1;
+				System.out.println("Your new number is: " + x);
+			}
+			else if (x == 1) 
+			{
+				System.out.println("Your new number is: " + x);
+			}
+			else
+			{
+				System.out.print(x);
+			}
+			System.out.println();
+			count = count + 1;
+		}
+		if (x == 1)
+		{
+			System.out.println("It took " + count + " cycles through the Collatz Conjecture");
+		}
+		else {}
+	}
+}
